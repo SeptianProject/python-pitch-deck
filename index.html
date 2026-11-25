@@ -1263,6 +1263,10 @@
       .msg.user {
         background: var(--grad);
       }
+
+      body:not(.show-timer) #timer {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -1421,10 +1425,7 @@
     <div id="timer">00:00 / 90:00</div>
 
     <main class="deck" id="deck">
-      <section
-        class="slide center-slide"
-        data-section="Pembukaan"
-        data-time="0–5 menit">
+      <section class="slide center-slide" data-section="Pembukaan">
         <div style="margin-bottom: 26px" class="a">
           <span class="badge">Prolab Learning</span>
           <span
@@ -1467,19 +1468,13 @@
           >
         </div>
       </section>
-      <section
-        class="slide center-slide"
-        data-section="Pembukaan"
-        data-time="0–5 menit">
+      <section class="slide center-slide" data-section="Pembukaan">
         <p class="eyebrow a">Pertanyaan pembuka</p>
         <h2 class="quote-big a" style="--i: 2" data-kinetic="words">
           “Bisakah kamu punya web app sendiri dalam 90 menit?”
         </h2>
       </section>
-      <section
-        class="slide center-slide"
-        data-section="Pembukaan"
-        data-time="0–5 menit">
+      <section class="slide center-slide" data-section="Pembukaan">
         <p class="eyebrow a">Tujuan sesi</p>
         <h2 class="quote-big a" style="--i: 2">
           “Bukan menghafal Python, tapi
@@ -1490,7 +1485,7 @@
           <b>bersama, langkah demi langkah.</b>
         </p>
       </section>
-      <section class="slide" data-section="Pembukaan" data-time="0–5 menit">
+      <section class="slide" data-section="Pembukaan">
         <header class="s-head a">
           <span class="badge">Yang akan kalian dapatkan</span>
           <h2
@@ -1534,70 +1529,407 @@
           </div>
         </div>
       </section>
-      <section class="slide" data-section="Pembukaan" data-time="0–5 menit">
+      <section class="slide" data-section="Pembukaan">
         <header class="s-head a">
-          <span class="badge">Rundown</span>
+          <span class="badge">Agenda</span>
           <h2
             class="k-title"
             style="font-size: clamp(26px, 3vw, 40px); margin: 0">
-            Alur sesi 90 menit
+            Agenda sesi
           </h2>
         </header>
         <div class="s-body">
-          <table class="table a" style="--i: 1">
-            <tr>
-              <th>Waktu</th>
-              <th>Sesi</th>
-              <th>Isi</th>
-            </tr>
-            <tr>
-              <td><b>0–5'</b></td>
-              <td>Opening &amp; Hook</td>
-              <td>Demo hasil akhir sebelum teori</td>
-            </tr>
-            <tr>
-              <td><b>5–20'</b></td>
-              <td>Python Logic Essentials</td>
-              <td>Variabel, list/dict, if/else, loop, functions</td>
-            </tr>
-            <tr>
-              <td><b>20–30'</b></td>
-              <td>Web Dev 101</td>
-              <td>Client–server, route, GET vs POST, Jinja</td>
-            </tr>
-            <tr>
-              <td><b>30–75'</b></td>
-              <td>Live Build · hands-on</td>
-              <td>Web app sederhana, 6 langkah bersama</td>
-            </tr>
-            <tr>
-              <td><b>75–85'</b></td>
-              <td>Mini Project</td>
-              <td>Briefing, kriteria, mulai dikerjakan</td>
-            </tr>
-            <tr>
-              <td><b>85–90'</b></td>
-              <td>Closing</td>
-              <td>Roadmap, Q&amp;A, e-certificate</td>
-            </tr>
-          </table>
+          <div class="grid3">
+            <div class="card a" style="--i: 1">
+              <svg class="ic"><use href="#i-book" /></svg>
+              <h3>Materi</h3>
+              <p>
+                Python Logic &amp; Functions<br />Intro Web Dev dengan Python
+              </p>
+            </div>
+            <div class="card a" style="--i: 2">
+              <svg class="ic"><use href="#i-code" /></svg>
+              <h3>Praktik</h3>
+              <p>
+                Live build web app dengan Flask<br />Mini project untuk
+                portfolio
+              </p>
+            </div>
+            <div class="card a" style="--i: 3">
+              <svg class="ic"><use href="#i-cap" /></svg>
+              <h3>Penutup</h3>
+              <p>
+                Roadmap belajar lanjutan<br />Tanya jawab &amp; e-certificate
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="slide" data-section="Python Logic">
+        <header class="s-head a">
+          <span class="badge">Python Logic Essentials</span>
+          <h2
+            class="k-title"
+            style="font-size: clamp(26px, 3vw, 40px); margin: 0">
+            Cukup ini untuk mulai
+          </h2>
+        </header>
+        <div class="s-body">
+          <div
+            class="a"
+            style="--i: 1; max-width: 860px; margin: 0 auto; width: 100%">
+            <div class="prompt-box" style="font-size: clamp(13px, 1.5vw, 17px)">
+              <span style="color: #8a8a8a"># data = list berisi dict</span>
+              tasks = [ {<span style="color: #ffb27a">"title"</span>:
+              <span style="color: #ffb27a">"Belajar Flask"</span>,
+              <span style="color: #ffb27a">"done"</span>: False}, {<span
+                style="color: #ffb27a"
+                >"title"</span
+              >: <span style="color: #ffb27a">"Bikin form POST"</span>,
+              <span style="color: #ffb27a">"done"</span>: True}, ]
+
+              <span style="color: #ff6a2b; font-weight: 700">def</span>
+              pending(items):
+              <span style="color: #ff6a2b; font-weight: 700">return</span> [t
+              <span style="color: #ff6a2b; font-weight: 700">for</span> t
+              <span style="color: #ff6a2b; font-weight: 700">in</span> items
+              <span style="color: #ff6a2b; font-weight: 700">if not</span>
+              t[<span style="color: #ffb27a">"done"</span>]]
+              print(len(pending(tasks)))
+              <span style="color: #8a8a8a"># → 1</span>
+            </div>
+          </div>
           <div
             class="chip-row a"
-            style="--i: 4; justify-content: center; margin-top: 18px">
+            style="--i: 5; justify-content: center; margin-top: 20px">
             <span class="chip"
-              ><svg class="ic"><use href="#i-book" /></svg
-              ><b>30 menit</b>&nbsp;materi</span
+              ><svg class="ic"><use href="#i-check" /></svg>Variabel</span
             ><span class="chip"
-              ><svg class="ic"><use href="#i-code" /></svg
-              ><b>60 menit</b>&nbsp;hands-on</span
+              ><svg class="ic"><use href="#i-check" /></svg>List &amp;
+              dict</span
+            ><span class="chip"
+              ><svg class="ic"><use href="#i-check" /></svg>if/else &amp;
+              loop</span
+            ><span class="chip"
+              ><svg class="ic"><use href="#i-check" /></svg>Functions</span
             >
           </div>
         </div>
       </section>
-      <section
-        class="slide center-slide"
-        data-section="Web Dev 101"
-        data-time="20–30 menit">
+      <section class="slide" data-section="Python Logic">
+        <header class="s-head a">
+          <span class="badge">1 · Variabel</span>
+          <h2
+            class="k-title"
+            style="font-size: clamp(26px, 3vw, 40px); margin: 0">
+            Variabel &amp; tipe data
+          </h2>
+        </header>
+        <div class="s-body">
+          <div class="grid2" style="align-items: start">
+            <ul class="check-list a" style="--i: 1">
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div><b>str</b> teks, misalnya nama atau judul task.</div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div><b>int / float</b> angka bulat dan desimal.</div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div><b>bool</b> True atau False, dasar dari percabangan.</div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div>
+                  <b>Variabel</b> nama untuk menyimpan nilai, bisa diubah kapan
+                  saja.
+                </div>
+              </li>
+            </ul>
+            <div
+              class="prompt-box a"
+              style="--i: 2; font-size: clamp(11px, 1.22vw, 17px)">
+              nama = <span style="color: #ffb27a">"Septian"</span>
+              <span style="color: #8a8a8a"># str</span> peserta = 40
+              <span style="color: #8a8a8a"># int</span> ipk = 3.85
+              <span style="color: #8a8a8a"># float</span> aktif =
+              <span style="color: #ff6a2b; font-weight: 700">True</span>
+              <span style="color: #8a8a8a"># bool</span>
+
+              print(type(peserta))
+              <span style="color: #8a8a8a"># &lt;class 'int'&gt;</span>
+              print(f<span style="color: #ffb27a">"Halo, {nama}!"</span>)
+              <span style="color: #8a8a8a"># f-string</span>
+            </div>
+          </div>
+          <div class="callout a" style="--i: 5; margin-top: 16px">
+            <svg class="ic"><use href="#i-spark" /></svg>
+            <div>
+              f-string dipakai terus di web untuk menyusun teks dinamis.
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="slide" data-section="Python Logic">
+        <header class="s-head a">
+          <span class="badge">2 · Struktur data</span>
+          <h2
+            class="k-title"
+            style="font-size: clamp(26px, 3vw, 40px); margin: 0">
+            List &amp; dict
+          </h2>
+        </header>
+        <div class="s-body">
+          <div class="grid2" style="align-items: start">
+            <ul class="check-list a" style="--i: 1">
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div>
+                  <b>list</b> kumpulan berurutan, diakses lewat index mulai dari
+                  0.
+                </div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div>
+                  <b>dict</b> pasangan key dan value, seperti profil atau satu
+                  task.
+                </div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div>
+                  <b>List of dict</b> bentuk data paling umum di web app.
+                </div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div>
+                  <b>Mengubah</b> append(), remove(), dan akses t["title"].
+                </div>
+              </li>
+            </ul>
+            <div
+              class="prompt-box a"
+              style="--i: 2; font-size: clamp(11px, 1.22vw, 17px)">
+              tasks = [<span style="color: #ffb27a">"Belajar Flask"</span>,
+              <span style="color: #ffb27a">"Bikin form"</span>]
+              tasks.append(<span style="color: #ffb27a">"Deploy"</span>)
+              print(tasks[0])
+              <span style="color: #8a8a8a"># Belajar Flask</span>
+
+              task = {
+              <span style="color: #ffb27a">"title"</span>:
+              <span style="color: #ffb27a">"Belajar Flask"</span>,
+              <span style="color: #ffb27a">"done"</span>:
+              <span style="color: #ff6a2b; font-weight: 700">False</span>, }
+              print(task[<span style="color: #ffb27a">"title"</span>])
+              <span style="color: #8a8a8a"># Belajar Flask</span>
+
+              data = [ task, {<span style="color: #ffb27a">"title"</span>:
+              <span style="color: #ffb27a">"Deploy"</span>,
+              <span style="color: #ffb27a">"done"</span>:
+              <span style="color: #ff6a2b; font-weight: 700">True</span>}, ]
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="slide" data-section="Python Logic">
+        <header class="s-head a">
+          <span class="badge">3 · Alur logika</span>
+          <h2
+            class="k-title"
+            style="font-size: clamp(26px, 3vw, 40px); margin: 0">
+            Percabangan &amp; loop
+          </h2>
+        </header>
+        <div class="s-body">
+          <div class="grid2" style="align-items: start">
+            <ul class="check-list a" style="--i: 1">
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div>
+                  <b>if / elif / else</b> memilih jalur berdasarkan kondisi.
+                </div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div><b>for</b> mengulang untuk setiap item di list.</div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div><b>Kondisi</b> ==, !=, >, &lt;, in, not.</div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div>
+                  <b>Di web</b> loop dipakai untuk merender daftar data ke
+                  halaman.
+                </div>
+              </li>
+            </ul>
+            <div
+              class="prompt-box a"
+              style="--i: 2; font-size: clamp(11px, 1.22vw, 17px)">
+              <span style="color: #ff6a2b; font-weight: 700">for</span> t
+              <span style="color: #ff6a2b; font-weight: 700">in</span> data:
+              <span style="color: #ff6a2b; font-weight: 700">if</span> t[<span
+                style="color: #ffb27a"
+                >"done"</span
+              >]: status = <span style="color: #ffb27a">"selesai"</span>
+              <span style="color: #ff6a2b; font-weight: 700">else</span>: status
+              = <span style="color: #ffb27a">"belum"</span> print(t[<span
+                style="color: #ffb27a"
+                >"title"</span
+              >], <span style="color: #ffb27a">"-"</span>, status)
+            </div>
+          </div>
+          <div class="callout a" style="--i: 5; margin-top: 16px">
+            <svg class="ic"><use href="#i-spark" /></svg>
+            <div>Pola ini yang nanti kita pindahkan ke template Jinja.</div>
+          </div>
+        </div>
+      </section>
+      <section class="slide" data-section="Python Logic">
+        <header class="s-head a">
+          <span class="badge">4 · Functions</span>
+          <h2
+            class="k-title"
+            style="font-size: clamp(26px, 3vw, 40px); margin: 0">
+            Functions: anatomi
+          </h2>
+        </header>
+        <div class="s-body">
+          <div class="grid2" style="align-items: start">
+            <ul class="check-list a" style="--i: 1">
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div><b>def</b> mendefinisikan function beserta namanya.</div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div><b>Parameter</b> input yang diterima function.</div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div><b>return</b> nilai yang dikembalikan ke pemanggil.</div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div>
+                  <b>Manfaat</b> tulis sekali, pakai berkali-kali (DRY).
+                </div>
+              </li>
+            </ul>
+            <div
+              class="prompt-box a"
+              style="--i: 2; font-size: clamp(11px, 1.22vw, 17px)">
+              <span style="color: #ff6a2b; font-weight: 700">def</span>
+              hitung_selesai(items): total = 0
+              <span style="color: #ff6a2b; font-weight: 700">for</span> t
+              <span style="color: #ff6a2b; font-weight: 700">in</span> items:
+              <span style="color: #ff6a2b; font-weight: 700">if</span> t[<span
+                style="color: #ffb27a"
+                >"done"</span
+              >]: total += 1
+              <span style="color: #ff6a2b; font-weight: 700">return</span> total
+              print(hitung_selesai(data))
+              <span style="color: #8a8a8a"># 1</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="slide" data-section="Python Logic">
+        <header class="s-head a">
+          <span class="badge">5 · Functions</span>
+          <h2
+            class="k-title"
+            style="font-size: clamp(26px, 3vw, 40px); margin: 0">
+            Functions: lebih dalam
+          </h2>
+        </header>
+        <div class="s-body">
+          <div class="grid2" style="align-items: start">
+            <ul class="check-list a" style="--i: 1">
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div>
+                  <b>return bukan print</b> print hanya menampilkan, return
+                  memberi nilai untuk dipakai lagi.
+                </div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div>
+                  <b>Default parameter</b> nilai bawaan jika argumen tidak
+                  diisi.
+                </div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div>
+                  <b>Saling memanggil</b> pecah masalah besar jadi bagian kecil.
+                </div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div>
+                  <b>Kaitan web</b> setiap route Flask adalah sebuah function.
+                </div>
+              </li>
+            </ul>
+            <div
+              class="prompt-box a"
+              style="--i: 2; font-size: clamp(11px, 1.22vw, 17px)">
+              <span style="color: #ff6a2b; font-weight: 700">def</span>
+              sapa(nama, sapaan=<span style="color: #ffb27a">"Halo"</span>):
+              <span style="color: #ff6a2b; font-weight: 700">return</span>
+              f<span style="color: #ffb27a">"{sapaan}, {nama}!"</span>
+
+              print(sapa(<span style="color: #ffb27a">"Prolab"</span>))
+              <span style="color: #8a8a8a"># Halo, Prolab!</span>
+              print(sapa(<span style="color: #ffb27a">"Prolab"</span>,
+              <span style="color: #ffb27a">"Hai"</span>))
+              <span style="color: #8a8a8a"># Hai, Prolab!</span>
+
+              <span style="color: #ff6a2b; font-weight: 700">def</span>
+              pesan_progres(items): selesai = hitung_selesai(items)
+              <span style="color: #ff6a2b; font-weight: 700">return</span>
+              f<span style="color: #ffb27a"
+                >"{selesai}/{len(items)} task selesai"</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="slide" data-section="Python Logic">
+        <header class="s-head a">
+          <span class="badge demo">DEMO 00</span>
+          <h2
+            class="k-title"
+            style="font-size: clamp(26px, 3vw, 40px); margin: 0">
+            Logic dalam aksi: list + function
+          </h2>
+        </header>
+        <div class="s-body">
+          <div
+            class="chat a"
+            style="--i: 1; max-width: 860px; margin: 0 auto; width: 100%"
+            data-sim="py3">
+            <div class="chat-head">
+              <div class="dots">
+                <span class="dot r"></span><span class="dot y"></span
+                ><span class="dot g"></span>
+              </div>
+              app.py → Terminal
+            </div>
+            <div class="chat-body"></div>
+          </div>
+        </div>
+      </section>
+      <section class="slide center-slide" data-section="Web Dev 101">
         <p class="eyebrow a">Core message</p>
         <h2
           class="k-title a"
@@ -1615,7 +1947,52 @@
           RESPONSE OUT.
         </h2>
       </section>
-      <section class="slide" data-section="Web Dev 101" data-time="20–30 menit">
+      <section class="slide" data-section="Web Dev 101">
+        <header class="s-head a">
+          <span class="badge">Web Dev 101</span>
+          <h2
+            class="k-title"
+            style="font-size: clamp(26px, 3vw, 40px); margin: 0">
+            Client, server, dan HTTP
+          </h2>
+        </header>
+        <div class="s-body">
+          <div class="grid3">
+            <div class="card a" style="--i: 1">
+              <svg class="ic"><use href="#i-globe" /></svg>
+              <h3>Client (browser)</h3>
+              <p>
+                Mengirim request dan menampilkan hasilnya. Menjalankan HTML,
+                CSS, dan JavaScript.
+              </p>
+            </div>
+            <div class="card a" style="--i: 2">
+              <svg class="ic"><use href="#i-server" /></svg>
+              <h3>Server (Flask)</h3>
+              <p>
+                Menerima request, menjalankan kode Python, lalu mengirim
+                response.
+              </p>
+            </div>
+            <div class="card a" style="--i: 3">
+              <svg class="ic"><use href="#i-send" /></svg>
+              <h3>HTTP</h3>
+              <p>
+                Bahasa yang dipakai keduanya untuk saling bicara: request dan
+                response.
+              </p>
+            </div>
+          </div>
+          <div class="callout a" style="--i: 5; margin-top: 18px">
+            <svg class="ic"><use href="#i-spark" /></svg>
+            <div>
+              Analogi: browser adalah pelanggan, server adalah dapur, HTTP
+              adalah daftar pesanan.
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="slide" data-section="Web Dev 101">
         <header class="s-head a">
           <span class="badge">Web Dev 101</span>
           <h2
@@ -1662,58 +2039,251 @@
           </div>
         </div>
       </section>
-      <section class="slide" data-section="Python Logic" data-time="5–20 menit">
+      <section class="slide" data-section="Web Dev 101">
         <header class="s-head a">
-          <span class="badge">Python Logic Essentials</span>
+          <span class="badge">Web Dev 101</span>
           <h2
             class="k-title"
             style="font-size: clamp(26px, 3vw, 40px); margin: 0">
-            Cukup ini untuk mulai
+            Anatomi request &amp; response
           </h2>
         </header>
         <div class="s-body">
-          <div
-            class="a"
-            style="--i: 1; max-width: 860px; margin: 0 auto; width: 100%">
-            <div class="prompt-box" style="font-size: clamp(13px, 1.5vw, 17px)">
-              <span style="color: #94a3b8"># data = list berisi dict</span>
-              tasks = [ {<span style="color: #34d399">"title"</span>:
-              <span style="color: #34d399">"Belajar Flask"</span>,
-              <span style="color: #34d399">"done"</span>: False}, {<span
-                style="color: #34d399"
-                >"title"</span
-              >: <span style="color: #34d399">"Bikin form POST"</span>,
-              <span style="color: #34d399">"done"</span>: True}, ]
-
-              <span style="color: #ff6a2b; font-weight: 700">def</span>
-              pending(items):
-              <span style="color: #ff6a2b; font-weight: 700">return</span> [t
-              <span style="color: #ff6a2b; font-weight: 700">for</span> t
-              <span style="color: #ff6a2b; font-weight: 700">in</span> items
-              <span style="color: #ff6a2b; font-weight: 700">if not</span>
-              t[<span style="color: #34d399">"done"</span>]]
-              print(len(pending(tasks)))
-              <span style="color: #94a3b8"># → 1</span>
+          <div class="grid2" style="align-items: start">
+            <div style="display: flex; flex-direction: column; gap: 14px">
+              <div
+                class="prompt-box a"
+                style="--i: 2; font-size: clamp(11px, 1.22vw, 17px)">
+                GET /tasks HTTP/1.1 Host: localhost:5000 Accept: text/html
+              </div>
+              <div
+                class="prompt-box a"
+                style="--i: 2; font-size: clamp(11px, 1.22vw, 17px)">
+                HTTP/1.1 200 OK Content-Type: text/html &lt;h1&gt;Task
+                saya&lt;/h1&gt;
+              </div>
             </div>
-          </div>
-          <div
-            class="chip-row a"
-            style="--i: 5; justify-content: center; margin-top: 20px">
-            <span class="chip"
-              ><svg class="ic"><use href="#i-check" /></svg>Variabel</span
-            ><span class="chip"
-              ><svg class="ic"><use href="#i-check" /></svg>List &amp;
-              dict</span
-            ><span class="chip"
-              ><svg class="ic"><use href="#i-check" /></svg>if/else &amp;
-              loop</span
-            ><span class="chip"
-              ><svg class="ic"><use href="#i-check" /></svg>Functions</span
-            >
+            <table class="table a" style="--i: 3">
+              <tr>
+                <th>Status</th>
+                <th>Arti</th>
+              </tr>
+              <tr>
+                <td><b>200</b></td>
+                <td>Berhasil</td>
+              </tr>
+              <tr>
+                <td><b>302</b></td>
+                <td>Redirect ke halaman lain</td>
+              </tr>
+              <tr>
+                <td><b>404</b></td>
+                <td>Halaman tidak ditemukan</td>
+              </tr>
+              <tr>
+                <td><b>500</b></td>
+                <td>Error di server</td>
+              </tr>
+            </table>
           </div>
         </div>
       </section>
-      <section class="slide" data-section="Demo" data-time="30–45 menit">
+      <section class="slide" data-section="Web Dev 101">
+        <header class="s-head a">
+          <span class="badge">Web Dev 101</span>
+          <h2
+            class="k-title"
+            style="font-size: clamp(26px, 3vw, 40px); margin: 0">
+            Route &amp; endpoint
+          </h2>
+        </header>
+        <div class="s-body">
+          <div class="grid2" style="align-items: start">
+            <ul class="check-list a" style="--i: 1">
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div><b>Route</b> pemetaan URL ke sebuah function.</div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div>
+                  <b>@app.route</b> decorator yang mendaftarkan function untuk
+                  URL tertentu.
+                </div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div><b>return</b> isi response yang dikirim ke browser.</div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div>
+                  <b>Endpoint</b> alamat yang bisa diakses, misalnya /tentang.
+                </div>
+              </li>
+            </ul>
+            <div
+              class="prompt-box a"
+              style="--i: 2; font-size: clamp(11px, 1.22vw, 17px)">
+              <span style="color: #ff6a2b; font-weight: 700">from</span> flask
+              <span style="color: #ff6a2b; font-weight: 700">import</span> Flask
+              app = Flask(__name__) @app.route(<span style="color: #ffb27a"
+                >"/"</span
+              >)
+              <span style="color: #ff6a2b; font-weight: 700">def</span> home():
+              <span style="color: #ff6a2b; font-weight: 700">return</span>
+              <span style="color: #ffb27a">"Halo, Prolab!"</span>
+
+              @app.route(<span style="color: #ffb27a">"/tentang"</span>)
+              <span style="color: #ff6a2b; font-weight: 700">def</span>
+              tentang():
+              <span style="color: #ff6a2b; font-weight: 700">return</span>
+              <span style="color: #ffb27a">"Halaman tentang"</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="slide" data-section="Web Dev 101">
+        <header class="s-head a">
+          <span class="badge">Web Dev 101</span>
+          <h2
+            class="k-title"
+            style="font-size: clamp(26px, 3vw, 40px); margin: 0">
+            GET vs POST
+          </h2>
+        </header>
+        <div class="s-body">
+          <div class="grid2" style="align-items: start">
+            <ul class="check-list a" style="--i: 1">
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div><b>GET</b> mengambil halaman, data terlihat di URL.</div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div>
+                  <b>POST</b> mengirim data form, data ada di body request.
+                </div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div><b>request.form</b> membaca isi form di sisi server.</div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div>
+                  <b>redirect</b> kembali ke halaman utama setelah data
+                  tersimpan.
+                </div>
+              </li>
+            </ul>
+            <div
+              class="prompt-box a"
+              style="--i: 2; font-size: clamp(11px, 1.22vw, 17px)">
+              @app.route(<span style="color: #ffb27a">"/tambah"</span>,
+              methods=[<span style="color: #ffb27a">"GET"</span>,
+              <span style="color: #ffb27a">"POST"</span>])
+              <span style="color: #ff6a2b; font-weight: 700">def</span>
+              tambah():
+              <span style="color: #ff6a2b; font-weight: 700">if</span>
+              request.method == <span style="color: #ffb27a">"POST"</span>:
+              judul = request.form[<span style="color: #ffb27a">"title"</span>]
+              baru = {<span style="color: #ffb27a">"title"</span>: judul,
+              <span style="color: #ffb27a">"done"</span>:
+              <span style="color: #ff6a2b; font-weight: 700">False</span>}
+              tasks.append(baru)
+              <span style="color: #ff6a2b; font-weight: 700">return</span>
+              redirect(<span style="color: #ffb27a">"/"</span>)
+              <span style="color: #ff6a2b; font-weight: 700">return</span>
+              render_template(<span style="color: #ffb27a">"tambah.html"</span>)
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="slide" data-section="Web Dev 101">
+        <header class="s-head a">
+          <span class="badge">Web Dev 101</span>
+          <h2
+            class="k-title"
+            style="font-size: clamp(26px, 3vw, 40px); margin: 0">
+            Template Jinja
+          </h2>
+        </header>
+        <div class="s-body">
+          <div class="grid2" style="align-items: start">
+            <ul class="check-list a" style="--i: 1">
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div><b>{{ }}</b> menampilkan nilai variabel.</div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div><b>{% %}</b> logika di template: for, if, endfor.</div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div>
+                  <b>render_template</b> mengirim data Python ke file HTML.
+                </div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div><b>Hasil</b> satu template untuk banyak data.</div>
+              </li>
+            </ul>
+            <div
+              class="prompt-box a"
+              style="--i: 2; font-size: clamp(11px, 1.22vw, 17px)">
+              # app.py @app.route("/") def home(): return
+              render_template("index.html", tasks=tasks) &lt;!--
+              templates/index.html --&gt; &lt;ul&gt; {% for t in tasks %}
+              &lt;li&gt;{{ t.title }}&lt;/li&gt; {% endfor %} &lt;/ul&gt;
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="slide" data-section="Web Dev 101">
+        <header class="s-head a">
+          <span class="badge">Web Dev 101</span>
+          <h2
+            class="k-title"
+            style="font-size: clamp(26px, 3vw, 40px); margin: 0">
+            Struktur proyek Flask
+          </h2>
+        </header>
+        <div class="s-body">
+          <div class="grid2" style="align-items: start">
+            <ul class="check-list a" style="--i: 1">
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div><b>app.py</b> pintu masuk aplikasi: route dan logika.</div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div><b>templates/</b> file HTML Jinja.</div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div><b>static/</b> CSS, gambar, dan JavaScript.</div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div>
+                  <b>venv</b> lingkungan terisolasi, tidak ikut di-commit.
+                </div>
+              </li>
+            </ul>
+            <div
+              class="prompt-box a"
+              style="--i: 2; font-size: clamp(11px, 1.22vw, 17px)">
+              task-tracker/ ├── app.py # route + logic ├── requirements.txt #
+              daftar library ├── templates/ │ ├── index.html │ └── tambah.html
+              └── static/ └── style.css
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="slide" data-section="Demo">
         <header class="s-head a">
           <span class="badge demo">DEMO 01</span>
           <h2
@@ -1738,7 +2308,7 @@
           </div>
         </div>
       </section>
-      <section class="slide" data-section="Demo" data-time="30–45 menit">
+      <section class="slide" data-section="Demo">
         <header class="s-head a">
           <span class="badge demo">DEMO 02</span>
           <h2
@@ -1763,7 +2333,7 @@
           </div>
         </div>
       </section>
-      <section class="slide" data-section="Live Build" data-time="30–75 menit">
+      <section class="slide" data-section="Live Build">
         <header class="s-head a">
           <span class="badge">Live Build</span>
           <h2
@@ -1808,15 +2378,12 @@
           <p
             class="quote-sub a"
             style="--i: 9; text-align: center; margin-top: 18px">
-            Setiap langkah punya <b>Git branch</b> (step-1 sampai step-6) agar
-            tidak ada yang tertinggal.
+            Tertinggal? Ambil starter code tiap langkah dari
+            <b>branch step-1 sampai step-6</b>.
           </p>
         </div>
       </section>
-      <section
-        class="slide"
-        data-section="Mini Project"
-        data-time="75–85 menit">
+      <section class="slide" data-section="Mini Project">
         <header class="s-head a">
           <span class="badge">Mini Project</span>
           <h2
@@ -1849,10 +2416,7 @@
           </div>
         </div>
       </section>
-      <section
-        class="slide"
-        data-section="Mini Project"
-        data-time="75–85 menit">
+      <section class="slide" data-section="Mini Project">
         <header class="s-head a">
           <span class="badge">Mini Project</span>
           <h2
@@ -1893,10 +2457,7 @@
           </div>
         </div>
       </section>
-      <section
-        class="slide center-slide"
-        data-section="Closing"
-        data-time="85–90 menit">
+      <section class="slide center-slide" data-section="Closing">
         <h2
           class="k-title a"
           style="
@@ -1922,10 +2483,7 @@
           Jangan berhenti di “sudah jalan”. Iterasi adalah intinya.
         </p>
       </section>
-      <section
-        class="slide center-slide"
-        data-section="Closing"
-        data-time="85–90 menit">
+      <section class="slide center-slide" data-section="Closing">
         <h2
           class="k-title a"
           style="font-size: clamp(34px, 5.2vw, 74px); text-align: center"
@@ -2022,6 +2580,11 @@
           user: "<!-- templates/index.html -->\n<h1>Task saya</h1>\n{% for t in tasks %}\n  <li>{{ t.title }}</li>\n{% endfor %}",
           typeSpeed: 8,
           ai: "Flask merender template dengan data dari Python:\n\n- Belajar Flask\n- Bikin form POST\n- Deploy ke Render\n\n**Satu template, banyak data.** Tambah item di list Python, halaman ikut berubah.",
+        },
+        py3: {
+          user: 'data = [\n  {"title": "Belajar Flask", "done": True},\n  {"title": "Bikin form", "done": False},\n]\n\ndef pesan_progres(items):\n  selesai = sum(1 for t in items if t["done"])\n  return f"{selesai}/{len(items)} task selesai"\n\nprint(pesan_progres(data))',
+          typeSpeed: 6,
+          ai: "$ python app.py\n**1/2 task selesai**\n\nData berupa list of dict, diolah function, hasilnya siap dipakai route Flask.",
         },
       };
     </script>
@@ -2460,7 +3023,7 @@
               break;
             case "t":
             case "T":
-              timerEl.click();
+              document.body.classList.toggle("show-timer");
               break;
             case "f":
             case "F":
