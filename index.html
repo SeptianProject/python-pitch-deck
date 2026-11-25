@@ -1524,7 +1524,7 @@
             <div class="card a" style="--i: 6">
               <svg class="ic"><use href="#i-target" /></svg>
               <h3>Mini Project</h3>
-              <p>Tugas yang layak masuk portfolio.</p>
+              <p>AI Task Planner untuk portfolio.</p>
             </div>
           </div>
         </div>
@@ -1551,8 +1551,8 @@
               <svg class="ic"><use href="#i-code" /></svg>
               <h3>Praktik</h3>
               <p>
-                Live build web app dengan Flask<br />Mini project untuk
-                portfolio
+                Live build web app dengan Flask<br />Mini project AI Task
+                Planner
               </p>
             </div>
             <div class="card a" style="--i: 3">
@@ -2379,7 +2379,7 @@
             class="quote-sub a"
             style="--i: 9; text-align: center; margin-top: 18px">
             Tertinggal? Ambil starter code tiap langkah dari
-            <b>branch step-1 sampai step-6</b>.
+            <b>branch step-1 sampai step-6</b>. Fitur AI menyusul sebagai demo.
           </p>
         </div>
       </section>
@@ -2389,7 +2389,134 @@
           <h2
             class="k-title"
             style="font-size: clamp(26px, 3vw, 40px); margin: 0">
-            Task Tracker, tiga level
+            AI Task Planner
+          </h2>
+        </header>
+        <div class="s-body">
+          <div
+            class="flow-h a"
+            style="
+              --i: 1;
+              justify-content: center;
+              gap: 8px;
+              margin-bottom: 26px;
+            ">
+            <span class="flow-node human">TUJUAN BESAR</span
+            ><span class="flow-arrow">→</span
+            ><span class="flow-node">GEMINI</span
+            ><span class="flow-arrow">→</span
+            ><span class="flow-node">SUBTASK</span
+            ><span class="flow-arrow">→</span
+            ><span class="flow-node hl">TO-DO LIST</span>
+          </div>
+          <div class="grid2">
+            <div class="card a" style="--i: 3">
+              <svg class="ic"><use href="#i-bulb" /></svg>
+              <h3>Smart Breakdown</h3>
+              <p>
+                Satu tujuan besar dipecah AI menjadi 3 sampai 7 langkah kecil
+                yang langsung masuk ke daftar.
+              </p>
+            </div>
+            <div class="card a" style="--i: 4">
+              <svg class="ic"><use href="#i-shield" /></svg>
+              <h3>Mode cadangan</h3>
+              <p>
+                Tanpa API key, atau saat AI error dan kuota habis, app tetap
+                jalan dengan langkah contoh.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="slide" data-section="Mini Project">
+        <header class="s-head a">
+          <span class="badge demo">DEMO 03</span>
+          <h2
+            class="k-title"
+            style="font-size: clamp(26px, 3vw, 40px); margin: 0">
+            AI memecah tujuan jadi langkah
+          </h2>
+        </header>
+        <div class="s-body">
+          <div
+            class="chat a"
+            style="--i: 1; max-width: 860px; margin: 0 auto; width: 100%"
+            data-sim="py4">
+            <div class="chat-head">
+              <div class="dots">
+                <span class="dot r"></span><span class="dot y"></span
+                ><span class="dot g"></span>
+              </div>
+              AI Task Planner
+            </div>
+            <div class="chat-body"></div>
+          </div>
+        </div>
+      </section>
+      <section class="slide" data-section="Mini Project">
+        <header class="s-head a">
+          <span class="badge">Persiapan</span>
+          <h2
+            class="k-title"
+            style="font-size: clamp(26px, 3vw, 40px); margin: 0">
+            Menyiapkan API key
+          </h2>
+        </header>
+        <div class="s-body">
+          <div class="grid2" style="align-items: start">
+            <ul class="check-list a" style="--i: 1">
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div>
+                  <b>Buka AI Studio</b> aistudio.google.com, login dengan akun
+                  Google.
+                </div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div>
+                  <b>Buat key</b> pilih Get API key lalu Create API key.
+                </div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div>
+                  <b>Simpan di .env</b> tempel key di file .env, jangan tulis
+                  langsung di kode.
+                </div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div>
+                  <b>Jangan di-commit</b> .gitignore sudah mengecualikan file
+                  .env.
+                </div>
+              </li>
+            </ul>
+            <div
+              class="prompt-box a"
+              style="--i: 2; font-size: clamp(11px, 1.22vw, 17px)">
+              <span style="color: #8a8a8a"># .env (jangan di-commit!)</span>
+              GEMINI_API_KEY=isi_api_key_milikmu GEMINI_MODEL=gemini-3.5-flash
+            </div>
+          </div>
+          <div class="callout a" style="--i: 5; margin-top: 16px">
+            <svg class="ic"><use href="#i-spark" /></svg>
+            <div>
+              Kuota free tier berbeda tiap model. Cek batasnya di halaman rate
+              limit AI Studio.
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="slide" data-section="Mini Project">
+        <header class="s-head a">
+          <span class="badge">Mini Project</span>
+          <h2
+            class="k-title"
+            style="font-size: clamp(26px, 3vw, 40px); margin: 0">
+            AI Task Planner, tiga level
           </h2>
         </header>
         <div class="s-body">
@@ -2397,20 +2524,24 @@
             <div class="card a" style="--i: 1">
               <span class="pill good">Basic</span>
               <h3 style="margin-top: 12px">Level 1</h3>
-              <p>App berjalan + 1 fitur tambahan buatan sendiri.</p>
+              <p>
+                App berjalan, fitur AI dari demo, dan 1 fitur buatan sendiri.
+              </p>
             </div>
             <div class="card a" style="--i: 2">
               <span class="pill okay">Intermediate</span>
               <h3 style="margin-top: 12px">Level 2</h3>
               <p>
-                Data tersimpan di SQLite atau JSON, tidak hilang saat restart.
+                Data tersimpan di SQLite atau JSON, plus 1 fitur AI lain buatan
+                sendiri.
               </p>
             </div>
             <div class="card a" style="--i: 3">
               <span class="pill bad">Challenge</span>
               <h3 style="margin-top: 12px">Level 3</h3>
               <p>
-                Deploy online (Render / PythonAnywhere) + README rapi di GitHub.
+                Deploy online dengan API key di environment variable + README
+                rapi di GitHub.
               </p>
             </div>
           </div>
@@ -2452,6 +2583,10 @@
               <li>
                 <svg class="ic"><use href="#i-check" /></svg>
                 <div><b>README jelas</b></div>
+              </li>
+              <li>
+                <svg class="ic"><use href="#i-check" /></svg>
+                <div><b>API key tidak ikut di GitHub</b></div>
               </li>
             </ul>
           </div>
@@ -2585,6 +2720,11 @@
           user: 'data = [\n  {"title": "Belajar Flask", "done": True},\n  {"title": "Bikin form", "done": False},\n]\n\ndef pesan_progres(items):\n  selesai = sum(1 for t in items if t["done"])\n  return f"{selesai}/{len(items)} task selesai"\n\nprint(pesan_progres(data))',
           typeSpeed: 6,
           ai: "$ python app.py\n**1/2 task selesai**\n\nData berupa list of dict, diolah function, hasilnya siap dipakai route Flask.",
+        },
+        py4: {
+          user: "Bikin website portfolio",
+          typeSpeed: 28,
+          ai: "AI menambahkan 5 subtask:\n\n1. Tentukan konten dan tujuan portfolio\n2. Kumpulkan project dan foto terbaik\n3. Desain tata letak halaman\n4. Bangun halaman dengan Flask dan Tailwind\n5. Deploy dan bagikan link-nya\n\n**Mode cadangan** aktif otomatis jika API key kosong atau kuota habis.",
         },
       };
     </script>
